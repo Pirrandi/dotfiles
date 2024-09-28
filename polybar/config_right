@@ -1,0 +1,31 @@
+[bar/right]
+monitor = 0
+position = right
+height = 28
+background = #1e1e1e
+foreground = #ffffff
+
+font-0 = "NotoSansMono Nerd Font:size=10;2"
+font-1 = "MaterialIcons:size=12;2"
+
+modules-left = date
+modules-center =
+modules-right = clock memory cpu
+
+[module/date]
+type = internal/date
+date = %Y-%m-%d
+format =  %date%
+
+[module/clock]
+type = internal/clock
+time = %H:%M
+format =  %time%
+
+[module/memory]
+type = internal/memory
+format =  %used%/%total%GB
+
+[module/cpu]
+type = internal/cpu
+format =  %usage%
