@@ -4,7 +4,7 @@ content = 󰐥
 content-padding = 1
 content-foreground = ${color.FOREGROUND}
 content-font = 3
-click-left = /home/dgovalen/.config/rofi/powermenu/type-4/powermenu.sh
+click-left = ~/.config/rofi/powermenu/type-4/powermenu.sh
 
 
 [module/volume]
