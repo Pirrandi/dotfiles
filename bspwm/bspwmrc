@@ -1,33 +1,25 @@
 #! /bin/sh
 
+# Variables
+foreground_color=$(grep 'FOREGROUND' ~/.config/polybar/colors | awk -F '= ' '{print $2}')
+medium_color=$(grep 'MEDIUM' ~/.config/polybar/colors | awk -F '= ' '{print $2}')
+
+# Servicios
 killall sxhkd
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
 killall notification-daemon
 killall dunst
 dunst -config ~/.config/dunst/dunstrc &
-#export CM_IGNORE_WINDOW="keepassxc"
-#clipmenud &
-
 xsetroot -cursor_name redglass &
-/home/dgovalen/.config/polybar/launchbar &
-# pgrep -x sxhkd > /dev/null || sxhkd &
-pkill -f "htb-presence-es.py"
-#python3 /home/dgovalen/projects/htb-presence/htb-presence-es.py &
+~/.config/polybar/launchbar &
 
-#xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rate 75 --pos 1920x0 --output DisplayPort-0 --auto --pos 0x0
+# BSPC CONFIG
 bspc monitor HDMI-0 -d I II III IV V VI VII VIII IX X
-#bspc desktop ^10 -m DisplayPort-0
-#bspc monitor DisplayPort-0 -r
-#bspc monitor DisplayPort-0 -n monitor1 -d
-#bspc monitor HDMI-A-0 -s DisplayPort-0
-
-#bspc rule -a '*' monitor=HDMI-A-0
-#bspc monitor HDMI-A-0 -p 1
 
 bspc config border_width 1
 bspc config window_gap 5
-bspc config focused_border_color "#00ff1b"
-bspc config normal_border_color "#008a0f"
+bspc config focused_border_color $foreground_color
+bspc config normal_border_color $medium_color
 bspc config top_padding 0
 
 bspc config split_ratio 0.52
@@ -35,28 +27,19 @@ bspc config borderless_monocle true
 bspc config gapless_monocle true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-#bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-#xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rate 75 --pos 1920x0 --output DisplayPort-0 --auto --pos 0x0
+# Configuracion de pantalla (Esencial)
 xrandr --output HDMI-0 --mode 1920x1080 --rate 74.97
 
 #AutoStart
 picom
-#picom -b --backend glx --xrender-sync-fence --blur-method none --vsync
-#picom -b --backend xrender --animations --animation-for-open-window zoom & #compositor
-#picom  --backend glx --xrender-sync-fence --blur-method none --animations --animation-for-open-window zoom --vsync & #compositor
 testyakuake=$(pgrep -u $uid -x yakuake)
 if [ "$testyakuake" == "" ]; then
 	yakuake &
 fi
-#pipewire-pulse &
-feh --bg-fill /home/dgovalen/Downloads/541715.png #wallpaper
+feh --bg-fill ~/Pictures/red-kali.png #wallpaper
 pulseaudio --start
-#xsetroot -cursor_name left_ptr &
-#xset -dpms s off
-#sleep 0.2
-#sh ~/start-sound.sh
 wmname LGjpeg&

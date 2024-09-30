@@ -8,7 +8,7 @@
 # bold_font Operator Mono Thick
 # bold_italic_font Operator Mono Medium
 # font_family      Input Mono
-font_family      HackNerdFont
+font_family      HurmitNerdFont
 italic_font      auto
 bold_font        auto
 bold_italic_font auto
@@ -20,7 +20,7 @@ active_tab_font_style   bold-italic
 # inactive_tab_foreground #06000E
 # inactive_tab_background #3b00b0
 inactive_tab_font_style normal
-
+background_blur 20
 
 # Font size (in pts)
 font_size        11.0
@@ -230,6 +230,7 @@ map ctrl+shift+up      increase_font_size
 map ctrl+shift+down    decrease_font_size
 map ctrl+shift+backspace restore_font_size
 map ctrl+f launch --type=overlay --stdin-source=@screen_scrollback /usr/bin/fzf --no-sort --no-mouse --exact -i
+map f1 set_tab_title
 
 # Symbol mapping (special font for specified unicode code points). Map the
 # specified unicode codepoints to a particular font. Useful if you need special
@@ -259,6 +260,6 @@ confirm_os_window_close 0
 
 
 # BEGIN_KITTY_THEME
-# Goa Base
+# Homebrew
 include current-theme.conf
 # END_KITTY_THEME

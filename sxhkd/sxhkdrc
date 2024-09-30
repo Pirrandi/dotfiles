@@ -13,12 +13,12 @@ super + Return
 
 # program launcher
 super + d
-	/home/dgovalen/.config/rofi/launchers/type-7/launcher.sh
+	rofi -show {run,drun,window} -theme ~/.config/rofi/rofi-collection/tokyonight/tokyonight.rasi
 
 
 # make sxhkd reload its configuration files:
 super + Escape
-	/home/dgovalen/.config/rofi/powermenu/type-4/powermenu.sh
+	~/.config/rofi/powermenu/type-4/powermenu.sh
 
 
 # show bar on key press
@@ -137,5 +137,5 @@ super + ctrl + {Left,Down,Up,Right}
 
 # Custom move/resize
 alt + super + {Left,Down,Up,Right}
-	/home/dgovalen/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+	~/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
 
