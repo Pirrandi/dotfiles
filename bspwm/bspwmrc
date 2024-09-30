@@ -40,6 +40,6 @@ testyakuake=$(pgrep -u $uid -x yakuake)
 if [ "$testyakuake" == "" ]; then
 	yakuake &
 fi
-feh --bg-fill ~/Pictures/red-kali.png #wallpaper
+feh --bg-fill ~/.config/bspwm/red-kali.png #wallpaper
 pulseaudio --start
 wmname LGjpeg&
