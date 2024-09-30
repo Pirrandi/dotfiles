@@ -17,5 +17,5 @@ cp -r rofi-collection ~/.config/rofi/
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip
 sudo mv Hack.zip /usr/local/share/fonts
-sudo unzip Hack.zip
+sudo unzip /usr/local/share/fonts/Hack.zip
 sudo rm /usr/local/share/fonts/Hack.zip
