@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install kitty bspwm neofetch nvim polybar rofi sxhkd picom
+sudo apt install kitty bspwm neofetch neovim polybar rofi sxhkd picom
 
 cp -r bspwm ~/.config/
 cp -r kitty ~/.config/
